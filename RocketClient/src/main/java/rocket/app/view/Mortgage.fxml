@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-
 
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rocket.app.view.MortgageController">
    <children>
@@ -21,11 +22,19 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField prefHeight="79.0" prefWidth="292.0" text="Income" />
-            <TextField prefHeight="74.0" prefWidth="292.0" text="Expenses" GridPane.rowIndex="1" />
-            <TextField prefHeight="114.0" prefWidth="292.0" text="Credit Score" GridPane.rowIndex="2" />
-            <TextField prefHeight="103.0" prefWidth="292.0" text="House Cost" GridPane.columnIndex="1" />
-            <ComboBox prefHeight="74.0" prefWidth="239.0" promptText="Term" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtIncome" prefHeight="25.0" prefWidth="292.0" />
+            <TextField fx:id="txtExpenses" prefHeight="24.0" prefWidth="292.0" GridPane.rowIndex="1" />
+            <TextField fx:id="txtCreditScore" prefHeight="26.0" prefWidth="214.0" GridPane.rowIndex="2" />
+            <TextField fx:id="txtHouseCost" prefHeight="26.0" prefWidth="292.0" GridPane.columnIndex="1" />
+            <ComboBox fx:id="cmbTerm" onAction="#comboBoxTerm" prefHeight="23.0" prefWidth="292.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+            <Button fx:id="Calculate" mnemonicParsing="false" onAction="#btnCalculatePayment" text="Calculate" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM" />
+            <Label fx:id="Income" prefHeight="17.0" prefWidth="77.0" text="Income" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
+            <Label fx:id="Expenses" prefHeight="17.0" prefWidth="75.0" text="Expenses" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+            <Label fx:id="CreditScore" prefHeight="17.0" prefWidth="72.0" text="Credit Score" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+            <Label fx:id="HouseCost" prefHeight="17.0" prefWidth="90.0" text="House Cost" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
+            <Label fx:id="Term" prefHeight="17.0" prefWidth="87.0" text="Term" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP" />
+            <Label fx:id="lblMortgagePayment" prefHeight="17.0" prefWidth="140.0" text="Mortgage Payment" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+            <TextField fx:id="MortgagePayment" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
    </children>

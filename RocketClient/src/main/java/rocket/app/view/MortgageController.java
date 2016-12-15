@@ -3,6 +3,10 @@ package rocket.app.view;
 import eNums.eAction;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import rocket.app.MainApp;
 import rocketCode.Action;
 import rocketData.LoanRequest;
@@ -22,7 +26,58 @@ public class MortgageController {
 	//		Labels   -  various labels for the controls
 	//		Button   -  button to calculate the loan payment
 	//		Label    -  to show error messages (exception throw, payment exception)
+	@FXML 
+	private Label Income;
+	
+	@FXML 
+	private Label Expenses;
+	
+	@FXML 
+	private Label CreditScore;
+	
+	@FXML 
+	private Label HouseCost;
+	
+	@FXML 
+	private Label Term;
+	
+	@FXML 
+	private Label MortgagePayment;
+	
+	@FXML
+	private Label lblMortgagePayment;
+	
+	@FXML 
+	private Label Error;
+	
+	@FXML 
+	private Label ErrorWarning;
+	
+	@FXML 
+	private TextField txtIncome;
+	
+	@FXML 
+	private TextField txtExpenses;
+	
+	@FXML 
+	private TextField txtCreditScore;
+	
+	@FXML 
+	private TextField txtHouseCost;
+	
+	@FXML 
+	private ComboBox cmbTerm;
+	
+	@FXML
+	private void comboBoxTerm() {
+		cmbTerm.getItems().add("15 year");
+		cmbTerm.getItems().add("30 Year");
+	}
+	
+	@FXML 
+	private Button Calculate;
 
+	
 	public void setMainApp(MainApp mainApp) {
 		this.mainApp = mainApp;
 	}
@@ -38,6 +93,8 @@ public class MortgageController {
 		
 		Action a = new Action(eAction.CalculatePayment);
 		LoanRequest lq = new LoanRequest();
+		
+		lq.setIncome(Double.parseDouble(txtIncome));
 		//	TODO - RocketClient.RocketMainController
 		//			set the loan request details...  rate, term, amount, credit score, downpayment
 		//			I've created you an instance of lq...  execute the setters in lq
